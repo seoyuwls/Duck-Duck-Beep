@@ -23,9 +23,9 @@ android {
         release {
             // 공모전 제출용: 별도 키 없이 설치·실행되도록 기본(debug) 서명 키로 서명한다. 스토어 배포 때는 전용 키로 바꾼다
             signingConfig = signingConfigs.getByName("debug")
+            // 코드 최적화(R8)를 켜면 Kotlin 표준 라이브러리 접근 오류로 앱이 시작하자마자 꺼져서, 제출용 빌드는 최적화를 끈다
             optimization {
-                enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+                enable = false
             }
         }
     }

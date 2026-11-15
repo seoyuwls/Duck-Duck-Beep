@@ -12,8 +12,9 @@
 
 ## APK 위치
 
-- **`apk/서유진_DuckDuckBeep_release.apk`** (release 빌드, 약 12MB)
+- **`apk/서유진_DuckDuckBeep_release.apk`** (release 빌드, 약 36MB)
 - 파일명은 `팀명_앱이름_release.apk` 규칙을 따르되, 파일명에 쓸 수 없는 공백과 `!`는 뺐습니다.
+- 코드 최적화(R8)는 앱이 시작하자마자 꺼지는 오류가 있어 끄고 빌드했습니다.
 - 공모전 제출용으로 별도 키 없이 설치되도록 Android 기본(debug) 서명 키로 서명했습니다(스토어 배포 때는 전용 키로 교체).
 
 ## 실행 방법
