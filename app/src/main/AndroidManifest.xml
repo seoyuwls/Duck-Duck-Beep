@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Pleos SDK 권한: 공모전 개발 단계에서는 선언만으로 에뮬레이터에서 사용 가능 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE" />
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE_SEARCH" />
+    <!-- 오리 반응 시험: 앰비언트 조명 제어, 알림 -->
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_LIGHTS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 같은 차종 인식 시험(차대번호 앞부분 읽기) -->
+    <uses-permission android:name="pleos.car.permission.CAR_INFO" />
+    <!-- AAOS 표준 차량 정보(제조사·모델명·연식) -->
+    <uses-permission android:name="android.car.permission.CAR_INFO" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Test">
+        <!-- 차에 없으면 없는 대로 동작하도록 필수는 아니다 -->
+        <uses-library android:name="android.car" android:required="false" />
+        <!-- Duck Duck Beep!: 앱 시작 화면 (duck-app-spec.md 기준) -->
+        <activity
+            android:name=".DuckDuckActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Test"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- SDK 값 확인용 실험 화면: adb shell am start -n com.example.chargesuggest/.probe.ProbeActivity -->
+        <activity
+            android:name=".probe.ProbeActivity"
+            android:exported="true"
+            android:label="SDK 실험"
+            android:theme="@style/Theme.Test" />
+        <!-- 앱이 보이지 않을 때의 반응 시험용 -->
+        <receiver android:name=".probe.DuckReceiver" android:exported="true" />
+    </application>
+
+</manifest>

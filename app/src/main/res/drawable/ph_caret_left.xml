@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Phosphor Icons (caret-left, regular) - https://phosphoricons.com - MIT License. 라이선스: THIRD_PARTY_NOTICES.md
+  원본 SVG(viewBox 256)를 안드로이드 벡터로 옮긴 것이다. 색은 코드에서 tint로 정한다.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z" />
+</vector>
